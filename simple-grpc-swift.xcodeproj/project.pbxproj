@@ -3,11 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		FEBB165F25E635F7004A6284 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBB165E25E635F7004A6284 /* main.swift */; };
+		FEBB166825E6369F004A6284 /* GRPC in Frameworks */ = {isa = PBXBuildFile; productRef = FEBB166725E6369F004A6284 /* GRPC */; };
+		FEBB166F25E636DA004A6284 /* update.proto in Sources */ = {isa = PBXBuildFile; fileRef = FEBB166E25E636DA004A6284 /* update.proto */; };
+		FEBB167225E636F7004A6284 /* Makefile in Sources */ = {isa = PBXBuildFile; fileRef = FEBB167125E636F7004A6284 /* Makefile */; };
+		FEBB167625E637D5004A6284 /* update.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBB167425E637D5004A6284 /* update.pb.swift */; };
+		FEBB167725E637D5004A6284 /* update.grpc.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEBB167525E637D5004A6284 /* update.grpc.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +30,11 @@
 /* Begin PBXFileReference section */
 		FEBB165B25E635F7004A6284 /* simple-grpc-swift */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "simple-grpc-swift"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FEBB165E25E635F7004A6284 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		FEBB166A25E636AF004A6284 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		FEBB166E25E636DA004A6284 /* update.proto */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.protobuf; path = update.proto; sourceTree = "<group>"; };
+		FEBB167125E636F7004A6284 /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		FEBB167425E637D5004A6284 /* update.pb.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = update.pb.swift; path = "simple-grpc-swift/model/update.pb.swift"; sourceTree = "<group>"; };
+		FEBB167525E637D5004A6284 /* update.grpc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = update.grpc.swift; path = "simple-grpc-swift/model/update.grpc.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +42,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEBB166825E6369F004A6284 /* GRPC in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -41,6 +52,8 @@
 		FEBB165225E635F7004A6284 = {
 			isa = PBXGroup;
 			children = (
+				FEBB167125E636F7004A6284 /* Makefile */,
+				FEBB166A25E636AF004A6284 /* README.md */,
 				FEBB165D25E635F7004A6284 /* simple-grpc-swift */,
 				FEBB165C25E635F7004A6284 /* Products */,
 			);
@@ -57,9 +70,20 @@
 		FEBB165D25E635F7004A6284 /* simple-grpc-swift */ = {
 			isa = PBXGroup;
 			children = (
+				FEBB166C25E636B6004A6284 /* Model */,
 				FEBB165E25E635F7004A6284 /* main.swift */,
 			);
 			path = "simple-grpc-swift";
+			sourceTree = "<group>";
+		};
+		FEBB166C25E636B6004A6284 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				FEBB167525E637D5004A6284 /* update.grpc.swift */,
+				FEBB167425E637D5004A6284 /* update.pb.swift */,
+				FEBB166E25E636DA004A6284 /* update.proto */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -78,6 +102,9 @@
 			dependencies = (
 			);
 			name = "simple-grpc-swift";
+			packageProductDependencies = (
+				FEBB166725E6369F004A6284 /* GRPC */,
+			);
 			productName = "simple-grpc-swift";
 			productReference = FEBB165B25E635F7004A6284 /* simple-grpc-swift */;
 			productType = "com.apple.product-type.tool";
@@ -105,6 +132,9 @@
 				Base,
 			);
 			mainGroup = FEBB165225E635F7004A6284;
+			packageReferences = (
+				FEBB166625E6369F004A6284 /* XCRemoteSwiftPackageReference "grpc-swift" */,
+			);
 			productRefGroup = FEBB165C25E635F7004A6284 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -119,7 +149,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FEBB167725E637D5004A6284 /* update.grpc.swift in Sources */,
+				FEBB167225E636F7004A6284 /* Makefile in Sources */,
+				FEBB167625E637D5004A6284 /* update.pb.swift in Sources */,
 				FEBB165F25E635F7004A6284 /* main.swift in Sources */,
+				FEBB166F25E636DA004A6284 /* update.proto in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -281,6 +315,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FEBB166625E6369F004A6284 /* XCRemoteSwiftPackageReference "grpc-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/grpc/grpc-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FEBB166725E6369F004A6284 /* GRPC */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FEBB166625E6369F004A6284 /* XCRemoteSwiftPackageReference "grpc-swift" */;
+			productName = GRPC;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FEBB165325E635F7004A6284 /* Project object */;
 }
