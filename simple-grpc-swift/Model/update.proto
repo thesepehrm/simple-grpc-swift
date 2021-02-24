@@ -1,0 +1,33 @@
+
+syntax = "proto3";
+
+import "google/protobuf/timestamp.proto";
+import "google/protobuf/empty.proto";
+
+package update;
+
+service Update {
+  rpc Login(LoginRequest) returns (LoginResponse) {}
+  rpc Logout(LogoutRequest) returns (google.protobuf.Empty) {}
+  rpc ServerPromotions(google.protobuf.Empty)
+      returns (stream UpdateStreamResponse) {}
+}
+
+message LoginRequest {
+  string username = 1;
+  string password = 2;
+}
+
+message LoginResponse { string token = 1; }
+
+message LogoutRequest { string token = 1; }
+
+message UpdateStreamResponse {
+  google.protobuf.Timestamp timestamp = 1;
+  Update update = 2;
+
+  message Update {
+    string type = 1;
+    string text = 2;
+  }
+}
